@@ -53,37 +53,54 @@ class _OverviewPageState extends State<OverviewPage> {
               leading:
                   IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
               actions: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                        hintText: "Search...",
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: Colors.grey[300],
-                          size: 26,
-                        )),
-                  ),
-                ),
+                IconButton(
+                    onPressed: () {}, icon: const Icon(Icons.notifications)),
+                /* TextField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: "Search...",
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.grey[300],
+                      )),
+                ), */
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: const Color.fromARGB(255, 238, 115, 48),
-              unselectedItemColor: Colors.white.withOpacity(0.7),
-              selectedItemColor: Colors.white,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: Color.fromARGB(255, 245, 245, 245),
+              unselectedItemColor: Colors.grey.withOpacity(0.5),
+              selectedItemColor: Colors.grey,
               currentIndex: selectedIndex,
               onTap: (index) => setState(() {
                 selectedIndex = index;
               }),
               items: const [
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.fact_check_outlined),
-                  label: "TO DO's",
+                  icon: Icon(
+                    Icons.circle,
+                    size: 28,
+                  ),
+                  label: "Stöbern",
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.done, size: 28),
-                  label: "Geschafft!",
+                  icon: Icon(
+                    Icons.newspaper,
+                    size: 28,
+                  ),
+                  label: "Prospekte",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite, size: 28),
+                  label: "Favoriten",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.savings, size: 28),
+                  label: "Aktionen",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.store, size: 28),
+                  label: "Märkte",
                 ),
               ],
             ),
