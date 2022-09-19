@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:marq_app/main.dart';
-import 'package:marq_app/widget/shimmer_widget.dart';
+import 'package:marq_app/widget/skeleton_screens/shimmer_widget.dart';
 import 'dart:async';
 
 import '../widget/todo_list_widget.dart';
@@ -47,13 +47,26 @@ class _OverviewPageState extends State<OverviewPage> {
         ? buildScaffoldShimmer()
         : Scaffold(
             appBar: AppBar(
+              backgroundColor: const Color.fromARGB(255, 238, 115, 48),
+              elevation: 0,
               toolbarHeight: 80,
-              flexibleSpace: Container(
-                color: const Color.fromARGB(255, 238, 115, 48),
-                child: Column(
-                  children: [],
+              leading:
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    style: const TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                        hintText: "Search...",
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: Colors.grey[300],
+                          size: 26,
+                        )),
+                  ),
                 ),
-              ),
+              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               backgroundColor: const Color.fromARGB(255, 238, 115, 48),

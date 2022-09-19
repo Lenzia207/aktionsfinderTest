@@ -5,7 +5,7 @@ import 'package:lottie/lottie.dart';
 import 'package:marq_app/model/todo_model.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:marq_app/provider/todo_provider.dart';
-import 'package:marq_app/widget/shimmer_widget.dart';
+import 'package:marq_app/widget/skeleton_screens/shimmer_widget.dart';
 import 'package:undo/undo.dart';
 
 class TodoWidget extends HookConsumerWidget {
@@ -20,20 +20,6 @@ class TodoWidget extends HookConsumerWidget {
 
   void deleteTodo(BuildContext context, WidgetRef ref) {
     ref.read(todosProvider.notifier).removeTodo(todo.id);
-    /* var todosLength = useState(0);
-    List<Todo> todos = ref.watch(todosProvider);
-    var isLoadingShimmer = useState(true);
-
-    if (todosLength.value != todos.length) {
-      todosLength.value = todos.length;
-      isLoadingShimmer.value = true;
-    }
-
-    Future.delayed(const Duration(seconds: 1), () {
-      isLoadingShimmer.value = false;
-
-      ref.read(todosProvider.notifier).removeTodo(todo.id);
-    }); */
 
     final snackBar = SnackBar(
       duration: const Duration(seconds: 5),

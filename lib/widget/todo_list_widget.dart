@@ -7,7 +7,7 @@ import 'package:marq_app/widget/todo_widget.dart';
 import 'package:marq_app/model/todo_model.dart';
 import 'package:marq_app/provider/todo_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:marq_app/widget/shimmer_widget.dart';
+import 'package:marq_app/widget/skeleton_screens/shimmer_widget.dart';
 import 'dart:async';
 
 class TodoListWidget extends HookConsumerWidget {
