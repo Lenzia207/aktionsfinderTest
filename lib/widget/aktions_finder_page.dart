@@ -109,8 +109,8 @@ class AktionsFinderPage extends HookConsumerWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            crossAxisSpacing: 1,
-                            mainAxisSpacing: 1),
+                            crossAxisSpacing: 5,
+                            mainAxisSpacing: 5),
                     shrinkWrap:
                         true, //important: so it doesn't break the layout
                     children: const [

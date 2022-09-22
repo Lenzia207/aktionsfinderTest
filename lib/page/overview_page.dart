@@ -39,7 +39,7 @@ class _OverviewPageState extends State<OverviewPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = [
-      AktionsFinderPage(),
+      const AktionsFinderPage(),
       const TodoListWidget(),
     ];
 
@@ -68,7 +68,7 @@ class _OverviewPageState extends State<OverviewPage> {
             ),
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Color.fromARGB(255, 245, 245, 245),
+              backgroundColor: const Color.fromARGB(255, 245, 245, 245),
               unselectedItemColor: Colors.grey.withOpacity(0.5),
               selectedItemColor: Colors.grey,
               currentIndex: selectedIndex,
