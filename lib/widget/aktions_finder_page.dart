@@ -42,10 +42,11 @@ class AktionsFinderPage extends HookConsumerWidget {
         : SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  width: double.infinity,
-                  height: 200,
-                  color: Colors.grey[300],
+                AspectRatio(
+                  aspectRatio: 2 / 1,
+                  child: Container(
+                    color: Colors.grey[300],
+                  ),
                 ),
                 Stack(
                   children: [
@@ -109,8 +110,9 @@ class AktionsFinderPage extends HookConsumerWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 5),
+                            crossAxisSpacing: 7,
+                            mainAxisSpacing: 7,
+                            childAspectRatio: 0.53),
                     shrinkWrap:
                         true, //important: so it doesn't break the layout
                     children: const [
