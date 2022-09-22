@@ -52,18 +52,22 @@ class _OverviewPageState extends State<OverviewPage> {
               toolbarHeight: 80,
               leading:
                   IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+              title: Center(
+                child: TextField(
+                  cursorColor: Colors.white,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    hintText: "Suchen ...",
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Colors.grey[300],
+                    ),
+                  ),
+                ),
+              ),
               actions: [
                 IconButton(
                     onPressed: () {}, icon: const Icon(Icons.notifications)),
-                /* TextField(
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                      hintText: "Search...",
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Colors.grey[300],
-                      )),
-                ), */
               ],
             ),
             bottomNavigationBar: BottomNavigationBar(
