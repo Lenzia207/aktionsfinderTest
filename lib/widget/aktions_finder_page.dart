@@ -28,7 +28,7 @@ class AktionsFinderPage extends HookConsumerWidget {
     // _2_
     //First the todos.index items are being set to false so the shimmer for the added Task is abled
     //But after delay all todo items are then set to true and the loading shimmer set to false to stop the shimmer Effect
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 2), () {
       isLoadingShimmer.value = false;
 
       //new element of the todo loaded (true)
@@ -38,7 +38,7 @@ class AktionsFinderPage extends HookConsumerWidget {
     });
 
     return isLoadingShimmer.value
-        ? MainPageShimmer()
+        ? const MainPageShimmer()
         : SingleChildScrollView(
             child: Column(
               children: [
@@ -63,10 +63,18 @@ class AktionsFinderPage extends HookConsumerWidget {
                         Container(
                           height: 30,
                           width: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.grey[300],
+                          decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 238, 115, 48),
                               borderRadius:
-                                  const BorderRadius.all(Radius.circular(23))),
+                                  BorderRadius.all(Radius.circular(23))),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Alles',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           width: 10,
@@ -75,9 +83,20 @@ class AktionsFinderPage extends HookConsumerWidget {
                           height: 30,
                           width: 100,
                           decoration: BoxDecoration(
-                              color: Colors.grey[300],
+                              /* color: Colors.grey[300], */
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 211, 211, 211),
+                                  width: 1.5),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(23))),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Supermarkt',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           width: 10,
@@ -86,43 +105,61 @@ class AktionsFinderPage extends HookConsumerWidget {
                           height: 30,
                           width: 80,
                           decoration: BoxDecoration(
-                              color: Colors.grey[300],
+                              /* color: Colors.grey[300], */
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 211, 211, 211),
+                                  width: 1.5),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(23))),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Elektro',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                         ),
                         const SizedBox(
                           width: 10,
                         ),
                         Container(
                           height: 30,
-                          width: 150,
+                          width: 170,
                           decoration: BoxDecoration(
-                              color: Colors.grey[300],
+                              /* color: Colors.grey[300], */
+                              border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 211, 211, 211),
+                                  width: 1.5),
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(23))),
+                          child: const Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              'Drogerie & Gesundheit',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
                         ),
                       ]),
                     ),
                   ],
                 ),
-                SizedBox(
-                  child: GridView(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 7,
-                            mainAxisSpacing: 7,
-                            childAspectRatio: 0.53),
-                    shrinkWrap:
-                        true, //important: so it doesn't break the layout
-                    children: const [
-                      AktionCardsWidget(),
-                      AktionCardsWidget(),
-                      AktionCardsWidget(),
-                      AktionCardsWidget()
-                    ],
-                  ),
-                )
+                GridView(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 7,
+                      mainAxisSpacing: 7,
+                      childAspectRatio: 0.53),
+                  shrinkWrap: true, //important: so it doesn't break the layout
+                  children: const [
+                    AktionCardsWidget(),
+                    AktionCardsWidget(),
+                    AktionCardsWidget(),
+                    AktionCardsWidget()
+                  ],
+                ),
               ],
             ),
           );
